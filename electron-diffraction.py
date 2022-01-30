@@ -48,27 +48,27 @@ xerr_bars = len(y1)*[0.005] # angstrom
 yerr_bars = len(y1)*[0.01767766953] # mm
 
 ## start plotting!
-plt.xlabel('wavelength(angstrom)')
-plt.ylabel('radius(mm)')
-plt.title('Curve Fitting')
+plt.xlabel('wavelength ($\AA$)')
+plt.ylabel('radius (mm)')
+plt.title('Average Radius vs. Wavelength for $d_{100}$ and $d_{110}$')
 # axis limit
 plt.xlim(0.14, 0.26)
 plt.ylim(7.75, 30)
 
 # plot data
-plt.scatter(x,y1,s=5,c='k',label='$r=61\lambda$')
+plt.scatter(x,y1,s=10,label='$r=61\lambda$')
 plt.errorbar(x,y1,yerr=yerr_bars,xerr=xerr_bars,fmt='None',ecolor='b')
 # plot linear fit
-plt.plot(x,y1e,'--r',label='Linear Fit for d_100')
+plt.plot(x,y1e,'--r',label='Linear Fit for $d_{100}$')
 
 # plot data
-plt.scatter(x,y2,s=5,c='k',label='$r=100\lambda$')
+plt.scatter(x,y2,s=10,c='k',label='$r=100\lambda$')
 plt.errorbar(x,y2,yerr=yerr_bars,xerr=xerr_bars,fmt='None',ecolor='r')
 # plot linear fit
-plt.plot(x,y2e,'--b',label='Linear Fit for d_110')
+plt.plot(x,y2e,'--b',label='Linear Fit for $d_{110}$')
 
-xticks = np.arange(0.16,0.26,0.02)
-yticks = np.arange(10,32.5,2.5)
+xticks = np.arange(0.14,0.26,0.02)
+yticks = np.arange(7.75,32.5,2.5)
 
 plt.legend()
 plt.show()
